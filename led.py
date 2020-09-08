@@ -1,15 +1,16 @@
 import RPi.GPIO as GPIO
-import time
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(11, GPIO.OUT)
 
-GPIO.output(11, GPIO.HIGH)
+ledPin = 11
+buttonPin = 12
 
-time.sleep(0.3)
+GPIO.setup(ledPin, GPIO.OUT)
+GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-GPIO.output(11, GPIO.LOW)
-
-time.sleep(0.3)
-
-GPIO.output(11, GPIO.HIGH)
+while True:
+  buttonState = GPIO.input(buttonPin)
+  if buttonState == False:
+    GPIO.output(ledPin, GPIO.HIGH)
+  else:
+    GPIO.output(ledPin, GPIO.LOW)
