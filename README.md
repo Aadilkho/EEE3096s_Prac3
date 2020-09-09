@@ -6,3 +6,4 @@ Usefull resources I used:
 2. http://acoptex.com/project/4006/project-19c-raspberry-pi-zero-w-board-led-and-push-button-at-acoptexcom/
 3. https://raspberrypi.stackexchange.com/questions/83150/raspberry-pi-led-not-turning-on-with-button
 4. https://www.makeuseof.com/tag/add-button-raspberry-pi-project/
+5. https://www.hackster.io/hardikrathod/push-button-with-raspberry-pi-6b6928
