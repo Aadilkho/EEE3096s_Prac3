@@ -27,7 +27,7 @@ def print_temp_thread():
     thread.start()
     
     print('Raw ADC Value: ', chan.value) 
-	#print('ADC Voltage: ' + str(chan.voltage) + 'V')
+	print('ADC Voltage: '+str(chan.voltage)+'V')
 
 if __name__ == "__main__":
     print_temp_thread() # call it once to start the thread
