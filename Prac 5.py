@@ -18,7 +18,6 @@ mcp = MCP.MCP3008(spi, cs)
 # create an analog input channel on pin 0
 chan = AnalogIn(mcp, MCP.P0)
 
-Temp = ((chan.voltage - (0.5))/0.01)
 print('Runtime	'+'Temp Reading	'+'temp	')
 x=0
 
@@ -30,7 +29,7 @@ def print_temp_thread():
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     global x
-    
+    Temp = ((chan.voltage - (0.5))/0.01)
     print(x, 's	', chan.value, '		', Temp, 'C')
     x = x + 10
 
