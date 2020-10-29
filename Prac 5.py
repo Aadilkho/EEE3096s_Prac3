@@ -30,7 +30,7 @@ def print_temp_thread():
     thread.start()
     global x
     Temp = ((chan.voltage - (0.5))/0.01)
-    Temp = round(Temp)
+    Temp = round(Temp, 2)
     print(x, 's	', chan.value, '		', Temp, 'C')
     x = x + 10
 
