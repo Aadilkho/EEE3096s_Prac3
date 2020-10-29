@@ -25,7 +25,7 @@ def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
     """
-    thread = threading.Timer(5.0, print_temp_thread)
+    thread = threading.Timer(10.0, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     global x
