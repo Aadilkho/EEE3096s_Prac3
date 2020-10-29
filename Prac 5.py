@@ -30,7 +30,7 @@ def print_temp_thread():
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     
-    print(x, 's	', chan.value, '	', Temp, 'C')
+    print(x, 's	', chan.value, '		', Temp, 'C')
     x = x + 10
 
 if __name__ == "__main__":
