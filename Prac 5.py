@@ -40,21 +40,19 @@ def print_temp_thread():
     """
     if (btn_value==0):
         thread = threading.Timer(10.0, print_temp_thread)
+        x = x + 10
     elif (btn_value==1):
         thread = threading.Timer(5.0, print_temp_thread)
+        x=x+5
     else:
         thread = threading.Timer(1.0, print_temp_thread)
+        x=x+1
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     global x
     Temp = ((chan.voltage - (0.5))/0.01)
     print(x, 's	', chan.value, '		', Temp, 'C')
-    if (btn_value==0):
-        x = x + 10
-    elif (btn_value==1):
-        x=x+5
-    else:
-        x=x+1
+        
     
 
 if __name__ == "__main__":
