@@ -51,7 +51,7 @@ def print_temp_thread():
     print(x, 's	', chan.value, '		', Temp, 'C')
     if (btn_value==0):
         x = x + 10
-    elif (btn_value==1:
+    elif (btn_value==):
         x=x+5
     else:
         x=x+1
