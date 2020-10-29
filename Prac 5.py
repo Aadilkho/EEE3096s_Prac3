@@ -31,7 +31,7 @@ def print_temp_thread():
     thread.start()
     global x
     
-    print(x, 's	', str(chan.voltage), '		', Temp, 'C')
+    print(x, 's	', chan.voltage, '		', Temp, 'C')
     x = x + 10
 
 if __name__ == "__main__":
