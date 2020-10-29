@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
+import threading
 import busio
 import digitalio
 import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
+
+def print_temp_thread():
+    """
+    This function prints the temperature to the screen every five seconds
+    """
+    thread = threading.Timer(10.0, print_temp_thread)
+    thread.daemon = True  # Daemon threads exit when the program does
+    thread.start()
+    print('Raw ADC Value: ', chan.value) 
+	print('ADC Voltage: ' + str(chan.voltage) + 'V')
 
 # create the spi bus
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
@@ -19,3 +30,10 @@ chan = AnalogIn(mcp, MCP.P0)
 
 print('Raw ADC Value: ', chan.value) 
 print('ADC Voltage: ' + str(chan.voltage) + 'V')
+
+if __name__ == "__main__":
+    print_temp_thread() # call it once to start the thread
+    
+    # Tell our program to run indefinitely
+    while True:
+        pass
