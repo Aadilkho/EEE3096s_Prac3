@@ -25,9 +25,8 @@ def print_temp_thread():
     thread = threading.Timer(10.0, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
-    
     print('Raw ADC Value: ', chan.value) 
-	print('ADC Voltage: '+chan.voltage+'V')
+    print('ADC Voltage: '+str(chan.voltage)+'V')
 
 if __name__ == "__main__":
     print_temp_thread() # call it once to start the thread
