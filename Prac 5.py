@@ -11,8 +11,6 @@ import RPi.GPIO as GPIO
 btn_increase=23
 GPIO.setup(btn_increase, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 btn_value=0
-# Setup debouncing and callbacks
-GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
 
 # create the spi bus
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
@@ -33,6 +31,8 @@ def btn_increase_pressed():
         btn_value=btn_value+1
     else:
         btn_value=0
+# Setup debouncing and callbacks
+GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
 
 def print_temp_thread():
     """
