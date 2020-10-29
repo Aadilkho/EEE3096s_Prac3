@@ -38,6 +38,7 @@ def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
     """
+    global x
     if (btn_value==0):
         thread = threading.Timer(10.0, print_temp_thread)
         x = x + 10
@@ -49,7 +50,7 @@ def print_temp_thread():
         x=x+1
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
-    global x
+    
     Temp = ((chan.voltage - (0.5))/0.01)
     print(x, 's	', chan.value, '		', Temp, 'C')
         
