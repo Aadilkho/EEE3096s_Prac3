@@ -40,7 +40,7 @@ def print_temp_thread():
     """
     if (btn_value==0):
         thread = threading.Timer(10.0, print_temp_thread)
-    elif (btn_value==1:
+    elif (btn_value==1):
         thread = threading.Timer(5.0, print_temp_thread)
     else:
         thread = threading.Timer(1.0, print_temp_thread)
