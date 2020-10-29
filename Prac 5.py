@@ -13,6 +13,17 @@ def print_temp_thread():
     thread = threading.Timer(10.0, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
+    # create the spi bus
+	spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
+
+	# create the cs (chip select)
+	cs = digitalio.DigitalInOut(board.D5)
+
+	# create the mcp object
+	mcp = MCP.MCP3008(spi, cs)
+
+	# create an analog input channel on pin 0
+	chan = AnalogIn(mcp, MCP.P0)
     print('Raw ADC Value: ', chan.value) 
 	print('ADC Voltage: ' + str(chan.voltage) + 'V')
 
