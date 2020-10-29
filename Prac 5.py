@@ -16,7 +16,7 @@ cs = digitalio.DigitalInOut(board.D5)
 mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 0
-chan = AnalogIn(mcp, MCP.P0)
+chan = AnalogIn(mcp, MCP.P1)
 
 Temp = ((chan.voltage - (0.5))/0.01)
 print('Runtime	'+'Temp Reading	'+'temp	')
