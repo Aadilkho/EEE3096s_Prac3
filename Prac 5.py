@@ -6,14 +6,7 @@ import board
 import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 
-def print_temp_thread():
-    """
-    This function prints the temperature to the screen every five seconds
-    """
-    thread = threading.Timer(10.0, print_temp_thread)
-    thread.daemon = True  # Daemon threads exit when the program does
-    thread.start()
-    # create the spi bus
+# create the spi bus
 	spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
 
 	# create the cs (chip select)
@@ -24,6 +17,15 @@ def print_temp_thread():
 
 	# create an analog input channel on pin 0
 	chan = AnalogIn(mcp, MCP.P0)
+	
+def print_temp_thread():
+    """
+    This function prints the temperature to the screen every five seconds
+    """
+    thread = threading.Timer(10.0, print_temp_thread)
+    thread.daemon = True  # Daemon threads exit when the program does
+    thread.start()
+    
     print('Raw ADC Value: ', chan.value) 
 	print('ADC Voltage: ' + str(chan.voltage) + 'V')
 
