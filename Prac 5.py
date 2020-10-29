@@ -18,6 +18,10 @@ mcp = MCP.MCP3008(spi, cs)
 # create an analog input channel on pin 0
 chan = AnalogIn(mcp, MCP.P0)
 
+Temp = (chan-(0.5)/0.01)
+print(Runtime	Temp Reading	Temp)
+x=0
+
 def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
@@ -25,8 +29,9 @@ def print_temp_thread():
     thread = threading.Timer(10.0, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
-    print('Raw ADC Value: ', chan.value) 
-    print('ADC Voltage: '+str(chan.voltage)+'V')
+    
+    print(x + 's	' + chan.value + '	' + temp + 'C')
+    x = x + 10
 
 if __name__ == "__main__":
     print_temp_thread() # call it once to start the thread
