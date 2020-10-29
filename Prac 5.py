@@ -19,7 +19,7 @@ mcp = MCP.MCP3008(spi, cs)
 chan = AnalogIn(mcp, MCP.P0)
 
 Temp = (chan-(0.5)/0.01)
-print(Runtime	Temp Reading	Temp)
+print('Runtime	'+'Temp Reading	'+'temp	')
 x=0
 
 def print_temp_thread():
