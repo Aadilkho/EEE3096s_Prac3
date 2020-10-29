@@ -29,6 +29,7 @@ def print_temp_thread():
     thread = threading.Timer(10.0, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
+    global x
     
     print(x, 's	', chan.value, '		', Temp, 'C')
     x = x + 10
