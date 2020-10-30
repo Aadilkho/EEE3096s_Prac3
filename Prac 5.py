@@ -68,7 +68,6 @@ def print_temp_thread():
 
 if __name__ == "__main__":
     btn_setup()
-    btn_pressed(23)
     print_temp_thread() # call it once to start the thread
     
 
