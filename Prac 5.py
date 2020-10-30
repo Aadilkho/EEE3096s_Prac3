@@ -67,10 +67,11 @@ def print_temp_thread():
     
 
 if __name__ == "__main__":
-    print_temp_thread() # call it once to start the thread
     btn_setup()
     btn_pressed()
+    print_temp_thread() # call it once to start the thread
     
+
     # Tell our program to run indefinitely
     while True:
         pass
