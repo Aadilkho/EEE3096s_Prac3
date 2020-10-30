@@ -23,7 +23,7 @@ chan = AnalogIn(mcp, MCP.P0)
 print(' ')
 print('Runtime	'+'Temp Reading	'+'temp	')
 x=0
-c=0
+c=10
 count=0
 def btn_setup():
     GPIO.setmode(GPIO.BCM)
