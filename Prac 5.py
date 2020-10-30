@@ -22,7 +22,7 @@ mcp = MCP.MCP3008(spi, cs)
 
 # create an analog input channel on pin 0
 chan = AnalogIn(mcp, MCP.P0)
-
+print(' ')
 print('Runtime	'+'Temp Reading	'+'temp	')
 x=0
 def btn_increase_pressed():
@@ -30,8 +30,9 @@ def btn_increase_pressed():
         btn_value=btn_value+1
     else:
         btn_value=0
+    GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
 # Setup debouncing and callbacks
-GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
+
 
 def print_temp_thread():
     """
@@ -52,13 +53,13 @@ def print_temp_thread():
     
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
-    GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
 
 if __name__ == "__main__":
     print_temp_thread() # call it once to start the thread
+    btn_increase_pressed()
     
     # Tell our program to run indefinitely
     while True:
