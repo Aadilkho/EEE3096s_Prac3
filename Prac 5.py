@@ -7,7 +7,7 @@ import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 # Setup board mode
-
+GPIO.setmode(GPIO.BOARD)
 btn_increase=23
 GPIO.setup(btn_increase, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 btn_value=0
@@ -39,11 +39,10 @@ def print_temp_thread():
     This function prints the temperature to the screen every five seconds
     """
     global x
-    
-    if GPIO.input(btn_value==0):
+    if (btn_value==0):
         thread = threading.Timer(10.0, print_temp_thread)
         x = x + 10
-    elif GPIO.input(btn_value==1):
+    elif (btn_value==1):
         thread = threading.Timer(5.0, print_temp_thread)
         x=x+5
     else:
