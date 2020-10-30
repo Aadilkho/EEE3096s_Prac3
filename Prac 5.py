@@ -41,14 +41,12 @@ def print_temp_thread():
     if GPIO.input(23)==0:
         thread = threading.Timer(10.0, print_temp_thread)
         x = x + 10
-        time.sleep(0.25)
     elif GPIO.input(23)==1:
         thread = threading.Timer(5.0, print_temp_thread)
         x=x+5
     else:
         thread = threading.Timer(1.0, print_temp_thread)
         x=x+1
-    GPIO.cleanup()
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     
