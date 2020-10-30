@@ -25,6 +25,7 @@ print(' ')
 print('Runtime	'+'Temp Reading	'+'temp	')
 x=0
 c=0
+count=0
 def btn_setup():
     GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(23, GPIO.RISING, callback = btn_pressed , bouncetime=200)
@@ -32,7 +33,7 @@ def btn_setup():
 
 def btn_pressed():
     global c
-    count=0
+    global count
     count=count+1
     if count==1:
         c = 10
