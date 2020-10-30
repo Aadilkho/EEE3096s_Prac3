@@ -37,13 +37,10 @@ def btn_pressed():
     count=count+1
     if count==1:
         c = 10
-        print('10')
     if count == 2:
         c = 5
-        print('5')
     if count == 3:
         c = 1
-        print(c)
         count = 0
     c = c + c
 
