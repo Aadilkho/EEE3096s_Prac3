@@ -34,11 +34,11 @@ def btn_pressed():
     global c
     count=0
     count=count+1
-    if count=1:
+    if count==1:
         c = 10
-    if count = 2:
+    if count == 2:
         c = 5
-    if count = 3:
+    if count == 3:
         c = 1
         cout = 0
 
@@ -54,7 +54,7 @@ def print_temp_thread():
     
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
-    
+
     x = x + c
     print(x, 's	', chan.value, '		', Temp, 'C')
         
