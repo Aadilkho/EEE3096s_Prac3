@@ -7,7 +7,7 @@ import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 # Setup board mode
-GPIO.setmode(GPIO.BOARD)
+GPIO.setmode(GPIO.BCM)
 btn_increase=23
 GPIO.setup(btn_increase, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 btn_value=0
