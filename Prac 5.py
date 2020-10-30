@@ -49,8 +49,8 @@ def print_temp_thread():
     """
     global x
     global c
-    x = x + c
-    
+    x = c
+
     thread = threading.Timer(x, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
@@ -58,7 +58,7 @@ def print_temp_thread():
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
 
-    
+        
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
