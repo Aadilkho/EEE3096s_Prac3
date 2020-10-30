@@ -42,7 +42,6 @@ def btn_pressed():
     if count == 3:
         c = 1
         count = 0
-    c = c + c
 
 def print_temp_thread():
     """
