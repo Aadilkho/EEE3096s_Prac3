@@ -34,20 +34,20 @@ def btn_setup():
 def btn_pressed(channel):
     global c
     global count
-    if count<2:
-        count=count+1
+    if count<2: #creates a loop to loop through the button pressed
+        count=count+1 # and change the sample rate
     else:
         count=0
     if count==0:
         c = 10
-        print('10')
+        print('Sampling every 10s')
     if count == 1:
         c = 5
-        print('5')
+        print('Sampling every 5s')
     if count == 2:
         c = 1
-        print('1')
-        cout = 0
+        print('Sampling every 1s')
+        count = 0
 
 def print_temp_thread():
     """
@@ -59,17 +59,17 @@ def print_temp_thread():
 
     thread = threading.Timer(c, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
-    thread.start()
+    thread.start() 
     
-    Temp = ((chan.voltage - (0.5))/0.01)
-    Temp = round(Temp, 2)
+    Temp = ((chan.voltage - (0.5))/0.01) # Equation obtained from MCP9700 datasheet
+    Temp = round(Temp, 2) # round off the display temperature
 
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
 
 if __name__ == "__main__":
-    btn_setup()
+    btn_setup() #call to check the button press
     print_temp_thread() # call it once to start the thread
     
 
