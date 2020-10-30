@@ -1,0 +1,16 @@
+Intro - Team members: 	Aadil Khoodoruth - KHDAAD001
+						Nikhil Bejrajh - BJRNIK001
+
+		Tutorial: Was shared between Nikhil and myself Aadil. I did question 1 and Nikhil question 2
+
+		Practical: This week I was in charge of doing the circuit and coding part of the practical and Nikhil did the report and also helped with the coding when I had problems.
+
+
+Design - Show how the ADC is hooked up and presend flow chart.
+		Show code and point to important parts that concerns hardware and timing
+
+
+ADC test - Run through the coding example
+
+Conclude - 	We compared the values obtained with that of a thermometer and it is 			within + - 1 degree. And it did not fluctuate much at room temperature
+			
