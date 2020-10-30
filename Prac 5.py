@@ -38,10 +38,10 @@ def print_temp_thread():
     This function prints the temperature to the screen every five seconds
     """
     global x
-    if (btn_value==0):
+    if GPIO.input(23)==0:
         thread = threading.Timer(10.0, print_temp_thread)
         x = x + 10
-    elif (btn_value==1):
+    elif GPIO.input(23)==1:
         thread = threading.Timer(5.0, print_temp_thread)
         x=x+5
     else:
