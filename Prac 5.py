@@ -26,6 +26,18 @@ chan = AnalogIn(mcp, MCP.P0)
 print('Runtime	'+'Temp Reading	'+'temp	')
 x=0
 def btn_increase_pressed():
+    if btn_value !=2:
+        btn_value=btn_value+1
+    else:
+        btn_value=0
+# Setup debouncing and callbacks
+GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
+
+def print_temp_thread():
+    """
+    This function prints the temperature to the screen every five seconds
+    """
+    global x
     if GPIO.input(23)==0:
         thread = threading.Timer(10.0, print_temp_thread)
         x = x + 10
@@ -35,15 +47,6 @@ def btn_increase_pressed():
     else:
         thread = threading.Timer(1.0, print_temp_thread)
         x=x+1
-# Setup debouncing and callbacks
-GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
-
-def print_temp_thread():
-    """
-    This function prints the temperature to the screen every five seconds
-    """
-    global x
-    
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     
