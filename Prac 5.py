@@ -42,7 +42,7 @@ def btn_pressed():
         print('5')
     if count == 3:
         c = 1
-        print('1')
+        print(c)
         count = 0
     c = c + c
 
