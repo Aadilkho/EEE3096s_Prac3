@@ -22,7 +22,7 @@ mcp = MCP.MCP3008(spi, cs)
 chan = AnalogIn(mcp, MCP.P0)
 print(' ')
 print('Runtime	'+'Temp Reading	'+'temp	')
-x=0
+x=-10
 c=10
 count=0
 def btn_setup():
