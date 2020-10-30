@@ -52,6 +52,7 @@ def print_temp_thread():
     thread.start()
     
     Temp = ((chan.voltage - (0.5))/0.01)
+    Temp = round(Temp, 2)
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
