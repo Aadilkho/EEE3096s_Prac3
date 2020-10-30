@@ -40,13 +40,13 @@ def btn_increase_pressed():
         time.sleep(0.200)
 # Setup debouncing and callbacks
 
-
+GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
 def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
     """
     global x
-    GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
+    
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     
