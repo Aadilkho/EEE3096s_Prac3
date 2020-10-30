@@ -41,7 +41,7 @@ def btn_pressed():
     if count == 3:
         c = 1
         cout = 0
-
+    c = c + c
 
 def print_temp_thread():
     """
@@ -49,7 +49,7 @@ def print_temp_thread():
     """
     global x
     global c
-    x = c
+    x = x + c
 
     thread = threading.Timer(x, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
@@ -59,7 +59,7 @@ def print_temp_thread():
     Temp = round(Temp, 2)
 
         
-    print(x, 's	', chan.value, '		', Temp, 'C')
+    print(c, 's	', chan.value, '		', Temp, 'C')
         
     
 
