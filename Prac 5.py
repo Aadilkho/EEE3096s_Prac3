@@ -31,7 +31,7 @@ def btn_increase_pressed():
     else:
         btn_value=0
 # Setup debouncing and callbacks
-GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
+
 
 def print_temp_thread():
     """
@@ -52,6 +52,7 @@ def print_temp_thread():
     
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
+    GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
