@@ -46,13 +46,13 @@ def print_temp_thread():
     This function prints the temperature to the screen every five seconds
     """
     global x
-    
+    GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
-    GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
+    
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
