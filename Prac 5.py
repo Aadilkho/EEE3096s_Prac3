@@ -43,8 +43,10 @@ def btn_pressed(channel):
         print('10')
     if count == 1:
         c = 5
+        print('5')
     if count == 2:
         c = 1
+        print('1')
         cout = 0
 
 def print_temp_thread():
@@ -55,7 +57,7 @@ def print_temp_thread():
     global c
     x = x + c
 
-    thread = threading.Timer(x, print_temp_thread)
+    thread = threading.Timer(c, print_temp_thread)
     thread.daemon = True  # Daemon threads exit when the program does
     thread.start()
     
