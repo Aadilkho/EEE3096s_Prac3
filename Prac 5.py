@@ -29,18 +29,15 @@ def btn_increase_pressed():
     if GPIO.input(23)==0:
         thread = threading.Timer(10.0, print_temp_thread)
         x = x + 10
-        time.sleep(0.200)
     elif GPIO.input(23)==1:
         thread = threading.Timer(5.0, print_temp_thread)
         x=x+5
-        time.sleep(0.200)
     else:
         thread = threading.Timer(1.0, print_temp_thread)
         x=x+1
-        time.sleep(0.200)
 # Setup debouncing and callbacks
-
 GPIO.add_event_detect(btn_increase, GPIO.RISING, callback = btn_increase_pressed , bouncetime=200)
+
 def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
@@ -52,7 +49,6 @@ def print_temp_thread():
     
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
-    
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
