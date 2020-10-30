@@ -7,7 +7,6 @@ import adafruit_mcp3xxx.mcp3008 as MCP
 from adafruit_mcp3xxx.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 # Setup board mode
-GPIO.setmode(GPIO.BCM)
 
 
 # create the spi bus
@@ -27,6 +26,7 @@ x=0
 c=0
 count=0
 def btn_setup():
+    GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(23, GPIO.RISING, callback = btn_pressed , bouncetime=200)
 # Setup debouncing and callbacks
@@ -34,15 +34,17 @@ def btn_setup():
 def btn_pressed():
     global c
     global count
-    count=count+1
-    if count==1:
+    if count<2:
+        count=count+1
+    else:
+        count=0
+    if count==0:
         c = 10
-        print('10')
-    if count == 2:
+    if count == 1:
         c = 5
-    if count == 3:
+    if count == 2:
         c = 1
-        count = 0
+        cout = 0
 
 def print_temp_thread():
     """
