@@ -10,7 +10,6 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 btn_increase=23
 GPIO.setup(btn_increase, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-btn_value=0
 
 # create the spi bus
 spi = busio.SPI(clock=board.SCK, MISO=board.MISO, MOSI=board.MOSI)
