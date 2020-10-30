@@ -40,7 +40,7 @@ def btn_pressed():
         c = 5
     if count == 3:
         c = 1
-        cout = 0
+        count = 0
     c = c + c
 
 def print_temp_thread():
