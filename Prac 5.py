@@ -31,7 +31,7 @@ def btn_setup():
     GPIO.add_event_detect(23, GPIO.RISING, callback = btn_pressed , bouncetime=200)
 # Setup debouncing and callbacks
 
-def btn_pressed():
+def btn_pressed(channel):
     global c
     global count
     if count<2:
