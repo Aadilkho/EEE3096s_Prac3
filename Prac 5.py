@@ -40,6 +40,7 @@ def btn_pressed():
         count=0
     if count==0:
         c = 10
+        print('10')
     if count == 1:
         c = 5
     if count == 2:
