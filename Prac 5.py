@@ -37,6 +37,7 @@ def btn_pressed():
     count=count+1
     if count==1:
         c = 10
+        print('10')
     if count == 2:
         c = 5
     if count == 3:
@@ -58,7 +59,6 @@ def print_temp_thread():
     Temp = ((chan.voltage - (0.5))/0.01)
     Temp = round(Temp, 2)
 
-    print(c,'= c val')
     print(x, 's	', chan.value, '		', Temp, 'C')
         
     
