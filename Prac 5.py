@@ -40,7 +40,7 @@ def start_setup():
 
 def start_end(channel):
 	global start
-	print(start)
+	
 	if start > 1:
 		start=0
 	start=start+1
