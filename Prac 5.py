@@ -85,6 +85,7 @@ def print_temp_thread():
 
 if __name__ == "__main__":
     btn_setup() #call to check the button press
+    start_end()
     print_temp_thread() # call it once to start the thread
     
 
