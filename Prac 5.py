@@ -62,7 +62,7 @@ def btn_pressed(channel):
         	print('Sampling every 1s')
         	count = 0
 
-        pass
+        
 def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
