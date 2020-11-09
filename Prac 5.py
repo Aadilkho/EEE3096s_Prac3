@@ -44,7 +44,7 @@ def start_end(channel):
 	if start > 1:
 		start=0
 	start=start+1
-	btn_pressed()
+	btn_pressed(channel)
 
 def btn_pressed(channel):
 	global c
