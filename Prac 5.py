@@ -39,11 +39,10 @@ def start_end(channel):
 	start = start + 1
 	if start > 1:
 		start=0
-		print('off')
 
 def btn_pressed(channel):
     global start
-    while (start == 1):
+    while start == 1:
     
     	global c
     	global count
@@ -61,6 +60,8 @@ def btn_pressed(channel):
         	c = 1
         	print('Sampling every 1s')
         	count = 0
+    else:
+    	print('off')
 
         
 def print_temp_thread():
