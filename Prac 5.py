@@ -38,24 +38,30 @@ def start_setup():
 	GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
 
+def start_end(channel):
+	global start
+	start=start+1
+	if start > 1:
+		start=0
+
 def btn_pressed(channel):
 	global c
 	global count
-	
-	count=count+1 # and change the sample rate
-	if count==1:
-		c = 10
-		print('Sampling every 10s')
-	if count == 2:
-		c = 5
-		print('Sampling every 5s')
-	if count == 3:
-		c = 1
-		print('Sampling every 1s')
-		count = 0
+	global start
 
-def start_end(channel):
-	print('pressed')
+	while start==1:
+
+		count=count+1 # and change the sample rate
+		if count==1:
+			c = 10
+			print('Sampling every 10s')
+		if count == 2:
+			c = 5
+			print('Sampling every 5s')
+		if count == 3:
+			c = 1
+			print('Sampling every 1s')
+			count = 0
 
 def print_temp_thread():
 	"""
