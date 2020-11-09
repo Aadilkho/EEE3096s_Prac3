@@ -33,7 +33,7 @@ def btn_setup():
 	
 # Setup debouncing and callbacks
 
-def start_setup():
+def start_setup(channel):
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
