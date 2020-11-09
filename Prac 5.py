@@ -40,10 +40,10 @@ def start_setup():
 
 def start_end(channel):
 	global start
-	start=start+1
 	print(start)
-	if start > 0:
+	if start > 1:
 		start=0
+	start=start+1
 
 def btn_pressed(channel):
 	global c
@@ -65,6 +65,7 @@ def print_temp_thread():
 	"""
 	This function prints the temperature to the screen every five seconds
 	"""
+	global start
 	global x
 	global c
 	x = x + c
