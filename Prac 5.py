@@ -66,19 +66,19 @@ def print_temp_thread():
 	This function prints the temperature to the screen every five seconds
 	"""
 	global start
-	global x
-	global c
-	x = x + c
-
-	
-	thread = threading.Timer(c, print_temp_thread)
-	thread.daemon = True  # Daemon threads exit when the program does
-	thread.start() 
-	
-	Temp = ((chan.voltage - (0.5))/0.01) # Equation obtained from MCP9700 datasheet
-	Temp = round(Temp, 2) # round off the display temperature
-
 	if start==1:
+		global x
+		global c
+		x = x + c
+
+	
+		thread = threading.Timer(c, print_temp_thread)
+		thread.daemon = True  # Daemon threads exit when the program does
+		thread.start() 
+	
+		Temp = ((chan.voltage - (0.5))/0.01) # Equation obtained from MCP9700 datasheet
+		Temp = round(Temp, 2) # round off the display temperature
+
 		print(x, 's ', chan.value, '        ', Temp, 'C')
 		
 	
