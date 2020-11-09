@@ -60,8 +60,6 @@ def btn_pressed(channel):
         	c = 1
         	print('Sampling every 1s')
         	count = 0
-    else:
-    	print('off')
 
         
 def print_temp_thread():
@@ -85,7 +83,7 @@ def print_temp_thread():
 
 if __name__ == "__main__":
     btn_setup() #call to check the button press
-    start_end(channel)
+    start_end()
     print_temp_thread() # call it once to start the thread
     
 
