@@ -42,7 +42,7 @@ def start_end(channel):
 	global start
 	start=start+1
 	print(start)
-	if start > 1:
+	if start > 0:
 		start=0
 
 def btn_pressed(channel):
@@ -69,7 +69,7 @@ def print_temp_thread():
 	global c
 	x = x + c
 
-	if start==1:
+	while start==1:
 		thread = threading.Timer(c, print_temp_thread)
 		thread.daemon = True  # Daemon threads exit when the program does
 		thread.start() 
