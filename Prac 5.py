@@ -38,7 +38,7 @@ def start_setup():
 	GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
 
-def start_end(channel):
+def start_end():
 	print('pressed')
 
 def btn_pressed(channel):
