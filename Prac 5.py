@@ -41,27 +41,25 @@ def start_setup():
 def start_end(channel):
 	global start
 	start=start+1
-	if start > 1:
-		start=0
+	print(start)
 
 def btn_pressed(channel):
 	global c
 	global count
-	global start
+	
+	count=count+1 # and change the sample rate
+	if count==1:
+		c = 10
+		print('Sampling every 10s')
+	if count == 2:
+		c = 5
+		print('Sampling every 5s')
+	if count == 3:
+		c = 1
+		print('Sampling every 1s')
+		count = 0
 
-	while start==1:
 
-		count=count+1 # and change the sample rate
-		if count==1:
-			c = 10
-			print('Sampling every 10s')
-		if count == 2:
-			c = 5
-			print('Sampling every 5s')
-		if count == 3:
-			c = 1
-			print('Sampling every 1s')
-			count = 0
 
 def print_temp_thread():
 	"""
