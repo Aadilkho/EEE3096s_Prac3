@@ -46,20 +46,18 @@ def start_end(channel):
 def btn_pressed(channel):
 	global c
 	global count
-	
-	count=count+1 # and change the sample rate
-	if count==1:
-		c = 10
-		print('Sampling every 10s')
-	if count == 2:
-		c = 5
-		print('Sampling every 5s')
-	if count == 3:
-		c = 1
-		print('Sampling every 1s')
-		count = 0
-
-
+	while True:
+		count=count+1 # and change the sample rate
+		if count==1:
+			c = 10
+			print('Sampling every 10s')
+		if count == 2:
+			c = 5
+			print('Sampling every 5s')
+		if count == 3:
+			c = 1
+			print('Sampling every 1s')
+			count = 0
 
 def print_temp_thread():
 	"""
