@@ -25,7 +25,7 @@ print('Runtime  '+'Temp Reading '+'temp ')
 x=-10
 c=10
 count=0
-start=0
+start=1
 def btn_setup():
 	GPIO.setmode(GPIO.BCM)
 	GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
