@@ -46,8 +46,9 @@ def start_end(channel):
 def btn_pressed(channel):
 	global c
 	global count
-	while True:
-		count=count+1 # and change the sample rate
+	count=count+1 # and change the sample rate
+	while start==1:
+		
 		if count==1:
 			c = 10
 			print('Sampling every 10s')
