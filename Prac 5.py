@@ -47,18 +47,17 @@ def btn_pressed(channel):
 	global c
 	global count
 	count=count+1 # and change the sample rate
-	while start==1:
 		
-		if count==1:
-			c = 10
+	if count==1:
+		c = 10
 			print('Sampling every 10s')
-		if count == 2:
-			c = 5
+	if count == 2:
+		c = 5
 			print('Sampling every 5s')
-		if count == 3:
-			c = 1
-			print('Sampling every 1s')
-			count = 0
+	if count == 3:
+		c = 1
+		print('Sampling every 1s')
+		count = 0
 
 def print_temp_thread():
 	"""
@@ -75,7 +74,8 @@ def print_temp_thread():
 	Temp = ((chan.voltage - (0.5))/0.01) # Equation obtained from MCP9700 datasheet
 	Temp = round(Temp, 2) # round off the display temperature
 
-	print(x, 's ', chan.value, '        ', Temp, 'C')
+	if start==1:
+		print(x, 's ', chan.value, '        ', Temp, 'C')
 		
 	
 
