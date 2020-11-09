@@ -38,9 +38,6 @@ def start_setup():
 	GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 	GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
 
-def start_end():
-	print('pressed')
-
 def btn_pressed(channel):
 	global c
 	global count
@@ -57,7 +54,9 @@ def btn_pressed(channel):
 		print('Sampling every 1s')
 		count = 0
 
-		
+def start_end(channel):
+	print('pressed')
+
 def print_temp_thread():
 	"""
 	This function prints the temperature to the screen every five seconds
