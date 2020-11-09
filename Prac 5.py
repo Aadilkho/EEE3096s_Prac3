@@ -78,7 +78,7 @@ def print_temp_thread():
 	Temp = ((chan.voltage - (0.5))/0.01) # Equation obtained from MCP9700 datasheet
 	Temp = round(Temp, 2) # round off the display temperature
 
-	while start==1:
+	if start==1:
 		print(x, 's ', chan.value, '        ', Temp, 'C')
 		
 	
