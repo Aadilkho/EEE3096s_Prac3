@@ -25,30 +25,44 @@ print('Runtime	'+'Temp Reading	'+'temp	')
 x=-10
 c=10
 count=0
+start=0
 def btn_setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(23, GPIO.RISING, callback = btn_pressed , bouncetime=200)
+    GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
 # Setup debouncing and callbacks
 
-def btn_pressed(channel):
-    global c
-    global count
-    if count<2: #creates a loop to loop through the button pressed
-        count=count+1 # and change the sample rate
-    else:
-        count=0
-    if count==0:
-        c = 10
-        print('Sampling every 10s')
-    if count == 1:
-        c = 5
-        print('Sampling every 5s')
-    if count == 2:
-        c = 1
-        print('Sampling every 1s')
-        count = 0
+def start_end(channel):
+	global start
+	start = start + 1
+	if start > 1:
+		start=0
+		print('off')
 
+def btn_pressed(channel):
+    global start
+    while (start == 1):
+    
+    	global c
+    	global count
+    	if count<2: #creates a loop to loop through the button pressed
+        	count=count+1 # and change the sample rate
+    	else:
+        	count=0
+    	if count==0:
+        	c = 10
+        	print('Sampling every 10s')
+    	if count == 1:
+        	c = 5
+        	print('Sampling every 5s')
+    	if count == 2:
+        	c = 1
+        	print('Sampling every 1s')
+        	count = 0
+
+        pass
 def print_temp_thread():
     """
     This function prints the temperature to the screen every five seconds
