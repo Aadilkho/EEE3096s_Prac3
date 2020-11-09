@@ -44,7 +44,7 @@ def start_end(channel):
 def btn_pressed(channel):
 	global c
 	global count
-	if count<2: #creates a loop to loop through the button pressed
+	if count<3: #creates a loop to loop through the button pressed
 		count=count+1 # and change the sample rate
 	else:
 		count=0
