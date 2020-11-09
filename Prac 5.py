@@ -30,9 +30,13 @@ def btn_setup():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
     GPIO.add_event_detect(23, GPIO.RISING, callback = btn_pressed , bouncetime=200)
-    GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
+    
 # Setup debouncing and callbacks
+
+def start_setup():
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(24, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.add_event_detect(24, GPIO.RISING, callback = start_end , bouncetime=200)
 
 def start_end(channel):
 	print('pressed')
@@ -77,6 +81,7 @@ def print_temp_thread():
 
 if __name__ == "__main__":
     btn_setup() #call to check the button press
+    start_end()
     print_temp_thread() # call it once to start the thread
     
 
