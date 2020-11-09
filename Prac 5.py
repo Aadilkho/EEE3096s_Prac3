@@ -41,7 +41,7 @@ def start_end(channel):
 def btn_pressed(channel):
 	global start
 
-    while start==0:
+    while (start==0):
     	global c
    	global count
    	if count<2: #creates a loop to loop through the button pressed
