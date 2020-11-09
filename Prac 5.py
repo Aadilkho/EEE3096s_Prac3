@@ -35,32 +35,25 @@ def btn_setup():
 # Setup debouncing and callbacks
 
 def start_end(channel):
-	global start
-	start = 1
+	print('pressed')
 
 def btn_pressed(channel):
-	global start
-
-    while (start==0):
-    	global c
-   		global count
-   		if count<2: #creates a loop to loop through the button pressed
-       		count=count+1 # and change the sample rate
-   		else:
-       		count=0
-   		if count==0:
-       		c = 10
-       		print('Sampling every 10s')
-   		if count == 1:
-       		c = 5
-       		print('Sampling every 5s')
-   		if count == 2:
-       		c = 1
-       		print('Sampling every 1s')
-       		count = 0
-
-    pass
-    
+    global c
+   	global count
+   	if count<2: #creates a loop to loop through the button pressed
+   		count=count+1 # and change the sample rate
+   	else:
+   		count=0
+   	if count==0:
+     	c = 10
+       	print('Sampling every 10s')
+   	if count == 1:
+       	c = 5
+       	print('Sampling every 5s')
+   	if count == 2:
+       	c = 1
+       	print('Sampling every 1s')
+       	count = 0
 
         
 def print_temp_thread():
