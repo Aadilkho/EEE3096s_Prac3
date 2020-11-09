@@ -59,7 +59,7 @@ def btn_pressed(channel):
        		print('Sampling every 1s')
        		count = 0
 
-    	pass
+    pass
     
 
         
