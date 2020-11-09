@@ -41,11 +41,11 @@ def btn_pressed(channel):
     global c
    	global count
    	if count<2: #creates a loop to loop through the button pressed
-   		count=count+1 # and change the sample rate
+       	count=count+1 # and change the sample rate
    	else:
-   		count=0
+       	count=0
    	if count==0:
-     	c = 10
+       	c = 10
        	print('Sampling every 10s')
    	if count == 1:
        	c = 5
@@ -77,7 +77,7 @@ def print_temp_thread():
 
 if __name__ == "__main__":
     btn_setup() #call to check the button press
-    
+    start_end()
     print_temp_thread() # call it once to start the thread
     
 
