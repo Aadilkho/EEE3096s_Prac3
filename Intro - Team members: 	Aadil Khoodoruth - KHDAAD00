@@ -13,4 +13,5 @@ Design - Show how the ADC is hooked up and presend flow chart.
 ADC test - Run through the coding example
 
 Conclude - 	We compared the values obtained with that of a thermometer and it is 			within + - 1 degree. And it did not fluctuate much at room temperature
+			So we can say that the test was successfull
 			
