@@ -70,16 +70,16 @@ def print_temp_thread():
 	global c
 	x = x + c
 
-	while start==1:
-		thread = threading.Timer(c, print_temp_thread)
-		thread.daemon = True  # Daemon threads exit when the program does
-		thread.start() 
+	
+	thread = threading.Timer(c, print_temp_thread)
+	thread.daemon = True  # Daemon threads exit when the program does
+	thread.start() 
 	
 	Temp = ((chan.voltage - (0.5))/0.01) # Equation obtained from MCP9700 datasheet
 	Temp = round(Temp, 2) # round off the display temperature
 
-	
-	print(x, 's ', chan.value, '        ', Temp, 'C')
+	while start==1:
+		print(x, 's ', chan.value, '        ', Temp, 'C')
 		
 	
 
