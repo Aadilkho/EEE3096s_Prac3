@@ -46,13 +46,13 @@ def btn_pressed(channel):
 	global count
 	
 	count=count+1 # and change the sample rate
-	if count==0:
+	if count==1:
 		c = 10
 		print('Sampling every 10s')
-	if count == 1:
+	if count == 2:
 		c = 5
 		print('Sampling every 5s')
-	if count == 2:
+	if count == 3:
 		c = 1
 		print('Sampling every 1s')
 		count = 0
