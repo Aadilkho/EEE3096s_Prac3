@@ -50,7 +50,7 @@ def btn_pressed(channel):
 		
 	if count==1:
 		c = 10
-			print('Sampling every 10s')
+		print('Sampling every 10s')
 	if count == 2:
 		c = 5
 			print('Sampling every 5s')
